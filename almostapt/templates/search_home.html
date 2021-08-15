@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<div class="body-styling">
+    <div class="heading-section">
+        <div class="main-img-container">
+            <a href="http://127.0.0.1:5000/"><img src="{{url_for('static', filename='./images/main_logo.png')}}"
+                    class="mx-auto d-block" style="width: 300px; height: 300px"></a>
+        </div>
+        <div class="extensions-table-container">
+            <div class="form-group">
+                <form class="mt-5" name="search" action="/threat_group" onsubmit="return validateForm()" >
+                    <div class="col-6 mx-auto input-group">
+                        <input type="text" class="form-control" name="search"
+                            placeholder="Search by vendor or group name (UNC1945, TAG-22)" >
+                        <button type="submit" class="btn btn-success">Search</button>
+                </form>
+            </div>
+        </div>
+        <div class="thrtgroups-table">
+            <table style="text-align: center;" class="main-table">
+                <tr>
+                    <th>Malware Used</th>
+                </tr>
+                <tr class="extension-row hover-effect">
+
+                    <td>
+                        <span class="functions table-data" onclick="insertFunctionIntoQuery('#ShadowPad');search();">
+                            <a class="link" href="#">ShadowPad</a></span>
+
+                        <span class="functions table-data" onclick="insertFunctionIntoQuery('#BEACON');search();">
+                            <a class="link" href="#">BEACON</a></span>
+
+                        <span class="functions table-data" onclick="insertFunctionIntoQuery('#RAINDROP');search();">
+                            <a class="link" href="#">RAINDROP</a></span>
+
+                        <span class="functions table-data" onclick="insertFunctionIntoQuery('#CHINACHOP');search();">
+                            <a class="link" href="#">CHINACHOP</a></span>
+
+                        <span class="functions table-data" onclick="insertFunctionIntoQuery('#DARKSIDE');search();">
+                            <a class="link" href="#">DARKSIDE</a></span>
+
+                        <span class="functions table-data" onclick="insertFunctionIntoQuery('#SLAPSTICK');search();">
+                            <a class="link" href="#">SLAPSTICK</a></span>
+
+                        <span class="functions table-data" onclick="insertFunctionIntoQuery('#NanoCore');search();">
+                            <a class="link" href="#">NanoCore</a></span>
+
+                        <span class="functions table-data" onclick="insertFunctionIntoQuery('#Poison Ivy');search();">
+                            <a class="link" href="#">Poison Ivy</a></span>
+
+                        <span class="functions table-data" onclick="insertFunctionIntoQuery('#CHAIRSMACK');search();">
+                            <a class="link" href="#">CHARISMACK</a></span>
+
+                    </td>
+                </tr>
+
+                {% endblock %}

@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+{% extends "base.html" %}
+
+{% block title %} (403) Forbidden {% endblock %} 
+{% block body %} 
+   <div class="content-section">
+    <h1>Forbidden</h1>
+    <p>Whatever you are looking for is not here.</p>
+    <p>Error: {{ error }} </p>
+    <p><a href="{{ url_for('main.home') }}">go home</a></p>
+    </div>
+{% endblock %}
+</html>
