@@ -1,13 +1,13 @@
 <figure>
 <div align="center">
-    <img src="https://github.com/mrippey/Almost-APT/blob/main/docs/main1.png" width="800px"/>
+    <img src="https://github.com/mrippey/Almost-APT/blob/master/docs/main1.png" width="800px"/>
 </div>
 <figcaption align="center"><b>Home Page</b></figcaption>
 </figure>
 <br>
 <figure>
 <div align="center">
-    <img src="https://github.com/mrippey/Almost-APT/blob/main/docs/main2.png" width="800px"/>
+    <img src="https://github.com/mrippey/Almost-APT/blob/master/docs/main2.png" width="800px"/>
 </div>
 <figcaption align="center"><b>Successful Search</b></figcaption><br>
 
