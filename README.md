@@ -18,8 +18,9 @@
 After watching the tutorial by [maksimKorzh](https://github.com/maksimKorzh/code-monkey-search), I was intrigued to find out
 what I could also do with some Flask and MongoDB. 
 
-Almost-APT focuses on cyber threat actors who have not quite yet been designated as APT's (Advanced Persistent Threats). The purpose 
-of this Almost-APT is to allow users to search for information on maybe not so well known threat actors. 
+Almost-APT provides users with a searchable database of cyber threat actors who have not quite yet been designated as APT's (Advanced Persistent Threats).
+As additional functionality is added, I hope this app will allow researchers or anyone interested to get a quick grasp of threat
+groups who may not be well known.
 
 Information currently available to users: 
 * Countries targeted
