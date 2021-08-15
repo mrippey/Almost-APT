@@ -290,6 +290,7 @@ body {
  
   padding: 0.25em 0.5em;
   margin-top: 10px;
+  
 }
 
 
@@ -299,12 +300,14 @@ body {
 
 table{
   width: 100%;
-  table-layout: fixed;
+  table-layout:fixed;
   border-collapse: separate;
   border-spacing: 5px 0;
+  
 }
 .table-data{
   margin: 0.2em 0;
+  
 }
 
 .thrtgroups-link{
@@ -333,6 +336,41 @@ table{
 content-wrap {
   padding-bottom: 2.5rem;
 }
+.wrapper {
+  text-align: center;
+}
+/*!
+*https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button
+*/
+.button {
+  position: static;
+  top: 50%;
+  border: 0;
+  line-height: 2.5;
+  padding: 0 20px;
+  font-size: 1rem;
+  
+  color: #fff;
+  text-shadow: 1px 1px 1px #000;
+  border-radius: 10px;
+  background-color: rgba(178, 17, 199, 0.938);
+  background-image: linear-gradient(to top left,
+                                    rgba(0, 0, 0, .2),
+                                    rgba(0, 0, 0, .2) 30%,
+                                    rgba(0, 0, 0, 0));
+  box-shadow: inset 2px 2px 3px rgba(255, 255, 255, .6),
+              inset -2px -2px 3px rgba(0, 0, 0, .6);
+}
+
+.button:hover {
+  background-color: rgba(178, 17, 199, 0.938);
+}
+
+.button:active {
+  box-shadow: inset -2px -2px 3px rgba(255, 255, 255, .6),
+              inset 2px 2px 3px rgba(0, 0, 0, .6);
+}
+
 
 footer {
 position: absolute;

@@ -2,11 +2,13 @@ from flask import Blueprint, render_template, request, flash
 import pymongo
 
 
+mongodb_url = ''
+
 main = Blueprint(
     "main",
     __name__,
-    static_folder="/static/",
-    template_folder="templates",
+    static_folder="",
+    template_folder="templates"
 )
 
 # basic route
@@ -16,10 +18,7 @@ def home():
     
     if "search" in request.args:
         # initialize and connect db
-        conn_mongo_cli = pymongo.MongoClient(
-        "",
-        authSource="admin",
-            )
+        conn_mongo_cli = pymongo.MongoClient(mongodb_url,authSource="admin")
 
         db = conn_mongo_cli["tagroupdb"]
 
@@ -45,25 +44,16 @@ def threat_group():
 
     if "search" in request.args:
         # initialize and connect db
-        conn_mongo_cli = pymongo.MongoClient(
-            "",
-            authSource="admin",
-        )
+        conn_mongo_cli = pymongo.MongoClient(mongodb_url, authSource="admin")
 
         db = conn_mongo_cli["tagroupdb"]
 
         db_collection = db.tagroups
-
-        # create index
-        db_collection.create_index(
-            [("vendor_des", pymongo.TEXT), ("name", pymongo.TEXT)]
-        )
-
-        # search text
+    
+        db_collection.create_index([("vendor_des", pymongo.TEXT), ("name", pymongo.TEXT)])
 
         threat_group = db_collection.find(
-            {"$text": {"$search": request.args.get("search")}}
-        )
+            {"$text": {"$search": request.args.get("search")}})
 
         threat_group_results = [entries for entries in threat_group]
 
@@ -72,6 +62,6 @@ def threat_group():
         conn_mongo_cli.close()
 
  
-    return render_template(
-        "threat_group.html", data=threat_group_results, length=total_results
-    )
+    return render_template("threat_group.html", 
+        data=threat_group_results, 
+        length=total_results)
