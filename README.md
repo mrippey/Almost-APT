@@ -11,37 +11,38 @@ Information currently available to users:
 * Sectors targeted 
 * Malware used 
 
+
 <figure>
 <div align="center">
+    <figcaption align="center"><b>Home Page</b></figcaption>
     <img src="https://github.com/mrippey/Almost-APT/blob/master/docs/main_home01.jpeg" width="800px"/>
 </div>
-<figcaption align="center"><b>Home Page</b></figcaption>
 </figure>
 <br>
 <figure>
 <div align="center">
+    <figcaption align="center"><b>Snippet of Groups Tracked</b></figcaption>
     <img src="https://github.com/mrippey/Almost-APT/blob/master/docs/groups_tracked.jpeg" width="800px"/>
 </div>
-<figcaption align="center"><b>Snippet of Groups Tracked</b></figcaption>
-    <br>
 <figure>
 <div align="center">
+    <figcaption align="center"><b>Search Result With Location Indicated</b></figcaption>
     <img src="https://github.com/mrippey/Almost-APT/blob/master/docs/example_01.jpeg" width="800px"/>
 </div>
-    <br>
-<figcaption align="center"><b>Search Result With Location Indicated</b></figcaption>
+ 
 </figure>
 <br>
 <figure>
 <div align="center">
+    <figcaption align="center"><b>Search Result Without Location Indicated</b></figcaption>
     <img src="https://github.com/mrippey/Almost-APT/blob/master/docs/example_02.jpeg" width="800px"/>
 </div>
-<figcaption align="center"><b>Search Result Without Location Indicated</b></figcaption>
 </figure>
 <br>
 
 ## :construction: This project is currently under development, check back occaisionally for updates, and when the site goes live!
 
+    
 ## :clipboard: TODO:
 * Get rid of the Python List output in the information displayed to the user.
 * Add functionality to Home and Links.
