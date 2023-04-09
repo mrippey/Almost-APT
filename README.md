@@ -28,6 +28,7 @@ Information currently available to users:
 <div align="center">
     <img src="https://github.com/mrippey/Almost-APT/blob/master/docs/example_01.jpeg" width="800px"/>
 </div>
+    <br>
 <figcaption align="center"><b>Search Result With Location Indicated</b></figcaption>
 </figure>
 <br>
@@ -49,4 +50,4 @@ Information currently available to users:
 * Add some Javascript (still learning) to provide a more interactive experience.
 
 ## Additional Info:
-* [MyTwitter](https://twitter.com/nahamike01)<br>
+* Contact - [Twitter](https://twitter.com/nahamike01)<br>
