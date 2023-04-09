@@ -22,7 +22,8 @@ Information currently available to users:
 <div align="center">
     <img src="https://github.com/mrippey/Almost-APT/blob/master/docs/groups_tracked.jpeg" width="800px"/>
 </div>
-<figcaption align="center"><b>Snippet of Groups Tracked</b></figcaption><br>
+<figcaption align="center"><b>Snippet of Groups Tracked</b></figcaption>
+    <br>
 <figure>
 <div align="center">
     <img src="https://github.com/mrippey/Almost-APT/blob/master/docs/example_01.jpeg" width="800px"/>
