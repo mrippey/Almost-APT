@@ -19,19 +19,19 @@ Information currently available to users:
 <br/>
 
 <div align="center">
-  <img src="https://github.com/mrippey/Almost-APT/blob/master/docs/groups_tracked.jpeg" width="800px"/>
+  <img src="https://github.com/mrippey/Almost-APT/blob/master/docs/groups_tracked.jpeg" width="800px"/><br>
   <figcaption><b>Snippet of Groups Tracked</b></figcaption>
 </div>
 <br/>
 
 <div align="center">
-  <img src="https://github.com/mrippey/Almost-APT/blob/master/docs/example_01.jpeg" width="800px"/>
+  <img src="https://github.com/mrippey/Almost-APT/blob/master/docs/example_01.jpeg" width="800px"/><br>
   <figcaption><b>Search Result With Location Indicated</b></figcaption>
 </div>
 <br/>
 
 <div align="center">
-  <img src="https://github.com/mrippey/Almost-APT/blob/master/docs/example_02.jpeg" width="800px"/>
+  <img src="https://github.com/mrippey/Almost-APT/blob/master/docs/example_02.jpeg" width="800px"/><br>
   <figcaption><b>Search Result Without Location Indicated</b></figcaption>
 </div>
 <br/>
