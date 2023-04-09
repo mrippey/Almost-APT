@@ -13,7 +13,7 @@ Information currently available to users:
 
 
 <div align="center">
-  <img src="https://github.com/mrippey/Almost-APT/blob/master/docs/main_home01.jpeg" width="800px"/>
+  <img src="https://github.com/mrippey/Almost-APT/blob/master/docs/main_home01.jpeg" width="800px"/><br>
   <figcaption><b>Home Page</b></figcaption>
 </div>
 <br/>
