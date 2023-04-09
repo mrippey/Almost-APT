@@ -12,32 +12,30 @@ Information currently available to users:
 * Malware used 
 
 
-<figure>
 <div align="center">
-    <figcaption align="center"><b>Home Page</b></figcaption>
-    <img src="https://github.com/mrippey/Almost-APT/blob/master/docs/main_home01.jpeg" width="800px"/>
+  <img src="https://github.com/mrippey/Almost-APT/blob/master/docs/main_home01.jpeg" width="800px"/>
+  <figcaption><b>Home Page</b></figcaption>
 </div>
-</figure>
-<br>
-<figure>
+<br/>
+
 <div align="center">
-    <figcaption align="center"><b>Snippet of Groups Tracked</b></figcaption>
-    <img src="https://github.com/mrippey/Almost-APT/blob/master/docs/groups_tracked.jpeg" width="800px"/>
+  <img src="https://github.com/mrippey/Almost-APT/blob/master/docs/groups_tracked.jpeg" width="800px"/>
+  <figcaption><b>Snippet of Groups Tracked</b></figcaption>
 </div>
-<figure>
+<br/>
+
 <div align="center">
-    <img src="https://github.com/mrippey/Almost-APT/blob/master/docs/example_01.jpeg" width="800px"/>
+  <img src="https://github.com/mrippey/Almost-APT/blob/master/docs/example_01.jpeg" width="800px"/>
+  <figcaption><b>Search Result With Location Indicated</b></figcaption>
 </div>
- <figcaption align="center"><b>Search Result With Location Indicated</b></figcaption>
-</figure>
-<br>
-<figure>
+<br/>
+
 <div align="center">
-    <img src="https://github.com/mrippey/Almost-APT/blob/master/docs/example_02.jpeg" width="800px"/>
+  <img src="https://github.com/mrippey/Almost-APT/blob/master/docs/example_02.jpeg" width="800px"/>
+  <figcaption><b>Search Result Without Location Indicated</b></figcaption>
 </div>
-    <figcaption align="center"><b>Search Result Without Location Indicated</b></figcaption>
-</figure>
-<br>
+<br/>
+
 
 ## :construction: This project is currently under development, check back occaisionally for updates, and when the site goes live!
 
