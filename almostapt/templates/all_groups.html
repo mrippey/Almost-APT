@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block title %}
+Almost APT | Group List
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h2 class="text-center mb-4">Groups Tracked by Almost APT</h2>
+    <div class="row">
+        {% for actor in groups %}
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                {% if actor.css_flag != "" %}
+                <div class="card-header"><span class="{{ actor.css_flag }}"></span></div>
+                {% else %}
+                <div class="card-header"><span class="fas fa-question-circle"></span></div>
+                {% endif %}
+                <div class="card-body text-center">
+                    <h5 class="card-title">{{ actor.group_name }}</h5>
+                </div>
+
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+</div>
+<div class="spinner-container" style="display: none;">
+    <div class="spinner"></div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/cont_scroll.js') }}"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+{% endblock %}

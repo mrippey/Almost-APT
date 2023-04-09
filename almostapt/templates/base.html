@@ -1,45 +1,86 @@
+<!-- templates/base.html -->
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-  <meta charset="utf-8">
-  <title>Almost APT Search</title>
-  <link rel="stylesheet" type="text/css"
-    href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
-    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
-    integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
-  <link rel="stylesheet" type="text/css" href="{{url_for('main.static', filename='css/styles.css')}}">
-</head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Almost APT | Home{% endblock %}</title>
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.9.1/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.9.1/mapbox-gl.css' rel='stylesheet' />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/cont_scroll.js') }}"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" crossorigin="anonymous">
+
 <body>
-  <div id="page-content-wrapper">
-    <nav class="navbar navbar-expand-lg  border-top ">
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <a class="nav-link" href="{{ url_for('main.home') }}">Home<span class="sr-only">(current)</span></a>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav ml-auto mt-2 mt-lg-1">
-          <li class="nav-item active">
-            <a class="nav-link" href="{{ url_for('main.home') }}">News<span class="sr-only">(current)</span></a>
-          </li>
-          <li class="nav-item active">
-            <a class="nav-link" href="#">Links</a>
-          </li>
-        </ul>
-      </div>
-    </nav>
-    <footer id="footer">By Michael Rippey, Twitter: <a class="link" href="https://twitter.com/nahamike01">nahamike01</a>
-    </footer>
-    <div>
-      {% include 'includes/_messages.html' %}
-      {% block body %}{% endblock %}
+
+    <div class="left-column">
+        <div class="nav-links">
+            <a href="{{ url_for('index') }}">Home</a>
+            <a href="{{ url_for('group_list') }}">Group List</a>
+
+        </div>
+        <div class="toggle-container">
+            <input type="checkbox" id="toggle-dark-mode">
+            <label for="toggle-dark-mode" class="toggle-slider"></label>
+            <span id="toggle-label">Dark Mode</span>
+        </div>
     </div>
-  </div>
-  <script type="text/javascript" src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-  <script type="text/javascript"
-    src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
-  <script type = "text/javascript" src="{{url_for('static', filename='js/scripts.js')}}"></script>
+
+    <div class="main-content">
+        <div class="centered-content">
+            {% with msg = get_flashed_messages(with_categories=true) %}
+            {% if msg %}
+            <div class="flashes">
+                {% for category, msgs in msg %}
+                <div class="alert alert-{{ category }}">{{ msgs }}</div>
+                {% endfor %}
+            </div>
+            {% endif %}
+            {% endwith %}
+
+            {% block content %}
+            <img src="{{ url_for('static', filename='images/main_logo.png') }}" alt="Logo" class="logo">
+            <div class="search-container">
+                <form action="{{ url_for('index') }}" method="post" class="input-group">
+                    <input type="search" name="search" class="search-bar form-control" placeholder="Search Ex: UNC####">
+
+                    <div class="input-group-append">
+                        <button class="btn btn-outline-secondary" type="submit">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                </form>
+
+            </div>
+            
+            <div class="intro-container">
+                <h2>Welcome to Almost APT</h2>
+            <p>Gain a quick understanding of threat groups that have made headlines, but haven't yet been designated an advanced
+                persistent threat (APT). This site (updated daily) contains detailed information on more than <strong>70</strong> groups, including tactics, techniques, and procedures (TTPs), industries targeted, and infrastructure characteristics. 
+                Search by group name to learn more. <br><br>Much of the information on these groups is provided by:</p>
+            </div>
+            <ul>
+                <li><strong>Recorded Future</strong></li>
+                <li><strong>Mandiant</strong></li>
+                <li><strong>Microsoft</strong></li>
+                <li><strong>More on the way...</strong></li>
+            </ul>
+            <p>
+                <span id="tracker-text" class="tracker-text">Total Groups Tracked: </span>
+                <span id="num-docs" class="num-docs">{{ count_documents }}</span>
+            </p>
+            {% endblock %}
+
+        </div>
+    </div>
 </body>
+
 </html>

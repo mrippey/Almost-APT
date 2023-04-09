@@ -1,0 +1,173 @@
+{% extends "base.html" %}
+
+{% block title %}
+{% if groups %}
+{% for group in groups %}
+{{ group.group_name }} - Threat Actor Group Details
+{% endfor %}
+{% else %}
+No Group Found - Almost APT
+{% endif %}
+{% endblock %}
+
+{% block content %}
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            {% for group in groups %}
+            <h1 class="display-4">{{ group.group_name }}</h1>
+            {% endfor %}
+        </div>
+        <div class="col-md-6 map-container">
+            <div id='map' style='width: 1000px; height: 700px;'></div>
+
+            <script>
+                const groupCountry = "{{ country }}";
+
+                if (groupCountry === 'Unknown') {
+                    mapboxgl.accessToken = 'YOUR TOKEN';
+                    const map = new mapboxgl.Map({
+                        container: 'map',
+                        style: 'mapbox://styles/mapbox/dark-v10',
+                        zoom: 2,
+                        center: [0, 0]
+                    });
+                } else {
+                    mapboxgl.accessToken = 'YOUR TOKEN';
+                    const map = new mapboxgl.Map({
+                        container: 'map',
+                        style: 'mapbox://styles/mapbox/dark-v10',
+                        zoom: 2,
+                        center: [0, 0]
+                    });
+
+                    fetch(`https://api.mapbox.com/geocoding/v5/mapbox.places/${groupCountry}.json?access_token=${mapboxgl.accessToken}&language=en`)
+                        .then(response => response.json())
+                        .then(data => {
+                            if (data.features.length > 0) {
+                                const coordinates = data.features[0].center;
+
+                                map.setCenter(coordinates);
+
+                                new mapboxgl.Marker().setLngLat(coordinates).addTo(map);
+
+                                
+                                map.addSource('country', {
+                                    'type': 'geojson',
+                                    'data': {
+                                        'type': 'Feature',
+                                        'properties': {},
+                                        'geometry': {
+                                            'type': 'Point',
+                                            'coordinates': coordinates
+                                        }
+                                    }
+                                });
+
+                                map.addLayer({
+                                    'id': 'country-layer',
+                                    'type': 'fill',
+                                    'source': 'country',
+                                    'paint': {
+                                        'fill-color': '#f00',
+                                        'fill-opacity': 0.5
+                                    }
+                                });
+                            } else {
+                                console.error('Could not find country coordinates');
+                            }
+                        })
+                        .catch(error => {
+                            console.error('Error fetching country coordinates:', error);
+                        });
+
+                    // Add map controls
+                    map.addControl(new mapboxgl.NavigationControl());
+                }
+            </script>
+        </div>
+        <div class="col-md-12" id="group-info-container">
+            {% if groups %}
+            {% for group in groups %}
+            <div class="group" data-country="{{ group.operating_region }}">
+                <h4>Naming Overlaps:</h4>
+                {% if group.name_overlaps == "None" %}
+                <ul style="padding-left:60px">
+                    <li>
+                        <p>{{ group.name_overlaps }}</p>
+                    </li>
+                </ul>
+                {% elif group.name_overlaps %}
+                <ul style="padding-left:60px">
+                    <li>{{ group.name_overlaps }}</li>
+                 
+                </ul>
+                {% else %}
+                <ul style="padding-left:60px">
+                    {% for names in group.name_overlaps %}
+                    <li>{{ names }}</li>
+                    {% endfor %}
+                </ul>
+                {% endif %}
+                <h4>Believed Operating Location:</h4>
+                <ul style="padding-left:60px">
+                    <li>
+                        <p>{{ group.operating_region }}</p>
+                    </li>
+                </ul>
+                <h4>Industries Targeted:</h4>
+                {% if group.target_industries|length > 1 %}
+                <ul style="padding-left:60px">
+                    {% for industry in group.target_industries %}
+                    <li>{{ industry }}</li>
+                    {% endfor %}
+                </ul>
+                {% else %}
+                <p>{{ group.target_industries }}</p>
+                {% endif %}
+                <h4>Tactics, Techniques, and Procedures:</h4>
+                {% if group.ttps == "Coming Soon" %} 
+                <ul style="padding-left: 60px">
+                    <li>{{ group.ttps }}</li>
+                </ul>
+                {% else %}
+                <ul style="padding-left:60px">
+                    {% for ttp in group.ttps %}
+                    <li>{{ ttp }}</li>
+                    {% endfor %}
+                </ul>
+                {% endif %}
+                <h4>Tools:</h4>
+                {% if group.tools_used|length > 1 %}
+                <ul style="padding-left:60px">
+                    {% for tool in group.tools_used %}
+                    <li>{{ tool }}</li>
+                    {% endfor %}
+                </ul>
+                {% else %}
+                <p>{{ group.tools_used }}</p>
+                {% endif %}
+                <h4>Infrastructure Characteristics:</h4>
+                {% if group.infrastructure_characteristics == "Coming Soon" %}
+                <ul style="padding-left:60px">
+                    <li>
+                        <p>{{ group.infrastructure_characteristics }}</p>
+                    </li>
+                </ul>
+                {% else %}
+                <ul style="padding-left:60px">
+                    {% for infra in group.infrastructure_characteristics %}
+                    <li>{{ infra }}</li>
+                    {% endfor %}
+                </ul>
+                {% endif %}
+            </div>
+            {% endfor %}
+            {% else %}
+            <p>No results found</p>
+            {% endif %}
+        </div>
+    </div>
+
+    {% endblock %}
