@@ -13,21 +13,32 @@ Information currently available to users:
 
 <figure>
 <div align="center">
-    <img src="https://github.com/mrippey/Almost-APT/blob/master/docs/main_ho" width="800px"/>
+    <img src="https://github.com/mrippey/Almost-APT/blob/master/docs/main_home01.jpeg" width="800px"/>
 </div>
 <figcaption align="center"><b>Home Page</b></figcaption>
 </figure>
 <br>
 <figure>
 <div align="center">
-    <img src="https://github.com/mrippey/Almost-APT/blob/master/docs/main2.png" width="800px"/>
+    <img src="https://github.com/mrippey/Almost-APT/blob/master/docs/groups_tracked.jpeg" width="800px"/>
 </div>
-<figcaption align="center"><b>Successful Search</b></figcaption><br>
+<figcaption align="center"><b>Snippet of Groups Tracked</b></figcaption><br>
+<figure>
+<div align="center">
+    <img src="https://github.com/mrippey/Almost-APT/blob/master/docs/example_01.jpeg" width="800px"/>
+</div>
+<figcaption align="center"><b>Search Result With Location Indicated</b></figcaption>
+</figure>
+<br>
+<figure>
+<div align="center">
+    <img src="https://github.com/mrippey/Almost-APT/blob/master/docs/example_02.jpeg" width="800px"/>
+</div>
+<figcaption align="center"><b>Search Result Without Location Indicated</b></figcaption>
+</figure>
+<br>
 
-## :construction: This project is still under active development
-
-
-
+## :construction: This project is currently under development, check back occaisionally for updates, and when the site goes live!
 
 ## :clipboard: TODO:
 * Get rid of the Python List output in the information displayed to the user.
@@ -36,8 +47,5 @@ Information currently available to users:
 * Allow users to query by malware used, in addition to group name.
 * Add some Javascript (still learning) to provide a more interactive experience.
 
-## :nut_and_bolt: Usage:
-* This app is currently under development, and will not be ready for production for some time. Check back here occasionally! 
-
 ## Additional Info:
-* Michael Rippey - [MyTwitter](https://twitter.com/nahamike01)<br>
+* [MyTwitter](https://twitter.com/nahamike01)<br>
