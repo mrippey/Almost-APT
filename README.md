@@ -1,15 +1,16 @@
-## :construction: This project is still under active development
+## :construction: This project is under active development, check back occaisionally for updates, and when the site goes live!
 
 # Almost-APT 
 
-Almost-APT provides users with a searchable database of cyber threat actors who have not quite yet been designated as APT's (Advanced Persistent Threats).
-As additional functionality is added, I hope this app will allow researchers or anyone interested to get a quick grasp of threat
-groups who may not be well known.
+Almost-APT provides users with a searchable database of (70+) cyber threat actor(s) whom you may or may not have heard of, but haven't yet "graduated" to being designated an advanced persistent threat (APT).
 
 Information currently available to users: 
-* Countries targeted
-* Sectors targeted 
-* Malware used 
+* Naming overlaps with other security vendors
+* Operating location
+* Industries targeted
+* Tactics, Techniques & Procedures (TTPs)
+* Malware, or tools used
+* Network infrastructure characteristics
 
 
 <div align="center">
@@ -37,15 +38,10 @@ Information currently available to users:
 <br/>
 
 
-## :construction: This project is currently under development, check back occaisionally for updates, and when the site goes live!
-
-    
 ## :clipboard: TODO:
-* Get rid of the Python List output in the information displayed to the user.
-* Add functionality to Home and Links.
-* Add/remove rows on output page to what is most likely interesting to the user.
-* Allow users to query by malware used, in addition to group name.
-* Add some Javascript (still learning) to provide a more interactive experience.
+* Group comparison page allowing users to compare groups and find similarities.
+* Add visualization to assist in identifying trends between groups.
+* Add links to current and past reports, blog posts, whitepapers detailing group operations.
 
 ## Additional Info:
 * Contact - [Twitter](https://twitter.com/nahamike01)<br>
