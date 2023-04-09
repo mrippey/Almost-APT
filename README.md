@@ -26,17 +26,16 @@ Information currently available to users:
 </div>
 <figure>
 <div align="center">
-    <figcaption align="center"><b>Search Result With Location Indicated</b></figcaption>
     <img src="https://github.com/mrippey/Almost-APT/blob/master/docs/example_01.jpeg" width="800px"/>
 </div>
- 
+ <figcaption align="center"><b>Search Result With Location Indicated</b></figcaption>
 </figure>
 <br>
 <figure>
 <div align="center">
-    <figcaption align="center"><b>Search Result Without Location Indicated</b></figcaption>
     <img src="https://github.com/mrippey/Almost-APT/blob/master/docs/example_02.jpeg" width="800px"/>
 </div>
+    <figcaption align="center"><b>Search Result Without Location Indicated</b></figcaption>
 </figure>
 <br>
 
